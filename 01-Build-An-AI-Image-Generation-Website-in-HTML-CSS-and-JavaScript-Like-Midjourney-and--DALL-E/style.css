@@ -1,0 +1,191 @@
+/* Importing Google Font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif; }
+
+.image-generator {
+  height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url(images/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative; }
+  .image-generator::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 18, 0.5); }
+  .image-generator .content {
+    color: #fff;
+    padding: 0 1rem;
+    max-width: 760px;
+    text-align: center;
+    position: relative; }
+    .image-generator .content h1 {
+      font-size: 2.5rem;
+      font-weight: 700; }
+    .image-generator .content p {
+      font-size: 1.35rem;
+      margin-top: 0.625rem; }
+    .image-generator .content .generate-form {
+      height: 3.25rem;
+      width: 100%;
+      background: #fff;
+      border-radius: 2rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin: 2.75rem 0 1rem;
+      padding: 0.5rem; }
+      .image-generator .content .generate-form .prompt-input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        background: none;
+        padding: 0 1rem;
+        color: #000;
+        font-size: 1rem; }
+      .image-generator .content .generate-form .controls {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 100%;
+        gap: 1rem; }
+        .image-generator .content .generate-form .controls .image-quantity {
+          border: none;
+          outline: none;
+          background: none;
+          font-size: 1rem; }
+          .image-generator .content .generate-form .controls .image-quantity:hover {
+            cursor: pointer; }
+        .image-generator .content .generate-form .controls .generate-btn {
+          border: none;
+          outline: none;
+          padding: 0 1.5rem;
+          border-radius: 2rem;
+          background: #4949e7;
+          color: #fff;
+          font-size: 1rem;
+          font-weight: 500;
+          -webkit-transition: 0.3s ease;
+          transition: 0.3s ease; }
+          .image-generator .content .generate-form .controls .generate-btn:hover {
+            cursor: pointer;
+            background: #383888; }
+          .image-generator .content .generate-form .controls .generate-btn:active {
+            background: #323280; }
+
+main {
+  margin: 3.125rem auto;
+  max-width: 1250px; }
+  main .image-gallery {
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem; }
+    main .image-gallery .img-card {
+      aspect-ratio: 1 /1;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      background: #f2f2f2; }
+      main .image-gallery .img-card > img {
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+        -o-object-fit: cover;
+           object-fit: cover; }
+      main .image-gallery .img-card.loading > img {
+        width: 5rem;
+        height: 5rem; }
+      main .image-gallery .img-card .download-btn {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        background: #fff;
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        opacity: 0;
+        -webkit-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out; }
+        main .image-gallery .img-card .download-btn img {
+          width: 1rem;
+          height: 1rem; }
+      main .image-gallery .img-card:not(.loading):hover .download-btn {
+        opacity: 1; }
+
+@media screen and (max-width: 767px) {
+  .image-generator h1 {
+    font-size: 1.8rem; }
+  .image-generator p {
+    font-size: 1rem; }
+  .image-generator .content .generate-form {
+    margin-top: 2rem;
+    height: 3.25rem;
+    display: block; }
+    .image-generator .content .generate-form .controls {
+      height: 2.5rem;
+      margin-top: 1rem;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end; }
+    .image-generator .content .generate-form .image-quantity {
+      color: #fff; }
+      .image-generator .content .generate-form .image-quantity option {
+        color: #000; }
+    .image-generator .content .generate-form .generate-btn {
+      height: 100%; }
+
+  main {
+    margin-top: 1.25rem; }
+    main .img-card:not(.loading) .download-btn {
+      opacity: 1; } }
+@media screen and (max-width: 500px) {
+  .image-gallery .img-card {
+    width: 100%; } }
+
+/*# sourceMappingURL=style.css.map */
