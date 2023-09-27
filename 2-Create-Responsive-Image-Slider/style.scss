@@ -1,0 +1,148 @@
+// Helper Mixins
+@mixin centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin between-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin circle($dimensions) {
+  width: $dimensions;
+  height: $dimensions;
+  border-radius: 50%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f1f4fd;
+  @include centering();
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  width: 95%;
+
+  .slider-wrapper {
+    position: relative;
+    .slide-button {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      outline: none;
+      color: #fff;
+      background: #000000;
+      box-shadow: 0 0 1rem #00000025;
+      border: 1px solid #ffffff25;
+      font-size: 2.2rem;
+      @include centering();
+      @include circle(3.125rem);
+      transition: 0.3s ease-in-out;
+      &.icon-angle-left {
+        left: -1.25rem;
+        display: none;
+      }
+      &.icon-angle-right {
+        right: -1.25rem;
+      }
+      &:hover {
+        background: #00000050;
+        box-shadow: 0 0 1rem #00000050;
+        backdrop-filter: blur(2rem);
+      }
+    }
+    .image-list {
+      display: grid;
+      gap: 1.125rem;
+      font-size: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      grid-template-columns: repeat(10, 1fr);
+      margin-bottom: 2rem;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .image-item {
+        width: 325px;
+        height: 400px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .slider-scrollbar {
+    height: 1.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    &:hover .scrollbar-track {
+      height: 0.25rem;
+    }
+
+    .scrollbar-track {
+      height: 0.125rem;
+      width: 100%;
+      background: #ccc;
+      position: relative;
+      border-radius: 0.25rem;
+
+      .scrollbar-thumb {
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        background: #000;
+        border-radius: inherit;
+        cursor: grab;
+        &:active {
+          cursor: grabbing;
+          height: 0.5rem;
+          top: -0.125rem;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          top: -0.625rem;
+          bottom: -0.625rem;
+        }
+      }
+    }
+  }
+}
+
+// Small Devices
+@media (max-width: 1023px) {
+    .slider-wrapper {
+        .slide-button {
+            display: none !important;
+        }
+        .image-list {
+            gap: 0.625rem;
+            margin-bottom: 1rem;
+
+            .image-item {
+                width: 280px;
+                height: 380px;
+            }
+        }
+
+        .slider-scrollbar {
+            .scrollbar-thumb {
+                width: 20%;
+            }
+        }
+    }
+}
