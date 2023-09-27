@@ -11,4 +11,4 @@ _Convert Your text into an image whitin a second using this JavaScript-powered A
 - Set the image source to the AI-generated image data
 - When the image loaded, remove the loading
 
-[!DEMO](https://ai-image-generator-itsh.netlify.app/)
+[!DEMO](ai-image-generator-itsh.netlify.app/)
