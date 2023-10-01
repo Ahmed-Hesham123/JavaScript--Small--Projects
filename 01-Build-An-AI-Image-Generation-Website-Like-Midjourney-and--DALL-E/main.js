@@ -39,7 +39,6 @@ const generateAIImages = async (userPromot, userImageQuantity) => {
         response_format: "b64_json",
       }),
     });
-    await console.log(res.json());
     if (!res.ok) {
       throw new Error("Faild to generate images! Please try again.");
     }
