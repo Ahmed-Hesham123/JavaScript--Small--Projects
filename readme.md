@@ -14,4 +14,4 @@ _To complete this challenge, I studied for a long time and it was a very interes
 
 ### Course Link
 
-![Projects Link](https://www.youtube.com/watch?v=fA_tWwPMapM&list=PLpwngcHZlPadhRwryAXw3mJWX5KH3T5L3&index=1)
+<a href="https://www.youtube.com/watch?v=fA_tWwPMapM&list=PLpwngcHZlPadhRwryAXw3mJWX5KH3T5L3&index=1">Course Link</a>
