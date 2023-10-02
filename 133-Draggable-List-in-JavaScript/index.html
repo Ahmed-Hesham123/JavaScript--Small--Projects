@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag & Drop Element | Itsh</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"
+      integrity="sha512-Eezs+g9Lq4TCCq0wae01s9PuNWzHYoCMkE97e2qdkYthpI0pzC3UGB03lgEHn2XM85hDOUF6qgqqszs+iXU4UA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <section class="wrapper">
+      <ul class="list draggable">
+        <li class="item">
+          <span class="text">Draggable Element One</span>
+          <span class="icon"></span>
+        </li>
+        <li class="item">
+          <span class="text">Draggable Element Two</span>
+          <span class="icon"></span>
+        </li>
+        <li class="item">
+          <span class="text">Draggable Element Three</span>
+          <span class="icon"></span>
+        </li>
+        <li class="item">
+          <span class="text">Draggable Element Four</span>
+          <span class="icon"></span>
+        </li>
+        <li class="item">
+          <span class="text">Draggable Element Five</span>
+          <span class="icon"></span>
+        </li>
+      </ul>
+    </section>
+    <script>
+      const dragArea = document.querySelector(".list");
+      new Sortable(dragArea, {
+        animation: 350,
+      });
+    </script>
+  </body>
+</html>

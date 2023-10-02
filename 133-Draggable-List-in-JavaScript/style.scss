@@ -1,0 +1,83 @@
+/* Importing Google Font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,700&display=swap");
+
+// Helper Mixins
+@mixin centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin between-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin circle($dimensions) {
+  width: $dimensions;
+  height: $dimensions;
+  border-radius: 50%;
+}
+
+// Global
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+}
+
+body {
+  @include centering();
+  min-height: 100vh;
+  background: #005597;
+  padding: 1.25rem;
+}
+
+.wrapper {
+  background: #ffffff25;
+  backdrop-filter: blur(50px);
+  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.1);
+  padding: 1.5rem;
+  max-width: 460px;
+  width: 100%;
+  border-radius: 0.5rem;
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .item {
+      background: #00559725;
+      box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.01);
+      backdrop-filter: blur(50px);
+      color: #fff;
+      padding: 0.75rem 1rem;
+      @include between-flex();
+      border-radius: 2.5rem;
+      .text {
+        font-size: 1rem;
+        font-weight: 400;
+        margin-right: 0.25rem;
+      }
+      .icon {
+        display: inline-block;
+        cursor: pointer;
+        width: 1.5rem;
+        height: 0.15rem;
+        background: #fff;
+        box-shadow: 0 0.5rem 0 #fff;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0.5rem;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: inherit;
+        }
+      }
+    }
+  }
+}
